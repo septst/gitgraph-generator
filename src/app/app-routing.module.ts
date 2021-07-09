@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Route } from '@angular/router';
+import { GeneratorComponent } from './generator/generator.component';
+import { SampleComponent } from './sample/sample.component';
 
-const routes: Routes = [];
+const routes: Route[] = [
+  { path: "", redirectTo: "/sample", pathMatch: "full" },
+  { path:"sample", component: SampleComponent},
+  { path:"generate", component: GeneratorComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
